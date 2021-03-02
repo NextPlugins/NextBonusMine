@@ -1,0 +1,38 @@
+#      _   _           _     _____  _             _                    #
+#     | \ | |         | |   |  __ \| |           (_)                   #
+#     |  \| | _____  _| |_  | |__) | |_   _  __ _ _ _ __  ___          #
+#     | . ` |/ _ \ \/ / __| |  ___/| | | | |/ _` | | '_ \/ __|         #
+#     | |\  |  __/>  <| |_  | |    | | |_| | (_| | | | | \__ \         #
+#     |_| \_|\___/_/\_\\__| |_|    |_|\__,_|\__, |_|_| |_|___/         #
+#                                           __/ |                      #
+#                                          |___/                       #
+#                          Servidor de Suporte                         #
+#                         discord.gg/JtTN7E6A2q                        #
+
+features:
+  # Tempo para o bonus expirar
+  expireTime: 60
+  # Ativar/Desativar hologramas
+  holograms: true
+
+bonus:
+  level-one:
+    # Level da recompensa (apenas visual)
+    level: 1
+    # Chance de encontrar minerando
+    chance: 15
+    # Bloco que podrá encontrar este bonus
+    material: DIAMOND_ORE
+    # Recompensas
+    rewards:
+      '1':
+        # Chance de quando abrir ser essa recompensa
+        chance: 50
+        # Comandos a serem executados
+        command:
+          - 'give %player% diamond_pickaxe'
+          - 'give %player% diamond'
+      '2':
+        chance: 50
+        command:
+          - 'give %player% obsidian'
