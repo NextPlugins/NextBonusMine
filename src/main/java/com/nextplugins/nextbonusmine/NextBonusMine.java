@@ -16,6 +16,7 @@ public final class NextBonusMine extends JavaPlugin {
     @Override
     public void onEnable() {
 
+        loadBonus();
         configureBStats();
 
         this.getLogger().info("Plugin startup successfully");
@@ -25,6 +26,10 @@ public final class NextBonusMine extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+    }
+
+    private void loadBonus() {
+        this.bonusMineManager.loadAll(getConfig().getConfigurationSection("bonus"));
     }
 
     private void configureBStats() {

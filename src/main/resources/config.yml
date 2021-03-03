@@ -14,6 +14,9 @@ features:
   expireTime: 60
   # Ativar/Desativar hologramas
   holograms: true
+  # Mundo em que irá funcionar o sistema
+  world: 'minerar'
+
 
 bonus:
   level-one:

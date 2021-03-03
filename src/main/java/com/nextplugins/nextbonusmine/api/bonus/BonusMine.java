@@ -1,8 +1,8 @@
 package com.nextplugins.nextbonusmine.api.bonus;
 
-import javafx.scene.paint.Material;
 import lombok.Builder;
 import lombok.Data;
+import org.bukkit.Material;
 
 import java.util.List;
 
