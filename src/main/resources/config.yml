@@ -28,6 +28,14 @@ features:
     - 'mina'
     - 'vip'
 
+messages:
+  chest-open:
+    - ''
+    - '&a&lYAY!&a Você acaba de encontrar um tesouro.'
+    - ''
+    - '&7Clique com o botão direito nele para abrir'
+
+
 bonus:
   level-one:
     # Level da recompensa (apenas visual)

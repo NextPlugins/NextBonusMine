@@ -4,10 +4,13 @@ import com.github.eikefab.libs.yamladapter.ConfigAdapter;
 import com.nextplugins.bonusmine.api.bonus.BonusMine;
 import com.nextplugins.bonusmine.configuration.ConfigValue;
 import com.nextplugins.bonusmine.configuration.adapter.BonusMineAdapter;
+import com.nextplugins.bonusmine.listener.BlockBreakListener;
+import com.nextplugins.bonusmine.listener.PlayerInteractListener;
 import com.nextplugins.bonusmine.manager.BonusChestManager;
 import com.nextplugins.bonusmine.manager.BonusMineManager;
 import lombok.Getter;
 import org.bstats.bukkit.Metrics;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 @Getter
@@ -33,6 +36,7 @@ public final class NextBonusMine extends JavaPlugin {
     @Override
     public void onEnable() {
         loadBonus();
+        listeners();
         configureBStats();
 
         this.getLogger().info("Plugin startup successfully");
@@ -48,6 +52,27 @@ public final class NextBonusMine extends JavaPlugin {
         new Metrics(this, PLUGIN_ID);
 
         this.getLogger().info("Enabled bStats successfully, statistics enabled");
+    }
+
+    private void listeners() {
+        PluginManager pluginManager = getServer().getPluginManager();
+
+        pluginManager.registerEvents(
+                new BlockBreakListener(
+                        this.configValue,
+                        this.bonusMineManager,
+                        this.bonusChestManager
+                ),
+                this
+        );
+
+        pluginManager.registerEvents(
+                new PlayerInteractListener(
+                        this.configValue,
+                        this.bonusChestManager
+                ),
+                this
+        );
     }
 
 }

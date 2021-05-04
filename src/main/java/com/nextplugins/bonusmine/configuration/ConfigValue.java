@@ -17,6 +17,10 @@ public final class ConfigValue {
 
     public List<String> worlds;
 
+    // messages
+
+    public List<String> chestOpen;
+
     public ConfigValue(FileConfiguration configuration) {
         this.configuration = configuration;
 
@@ -24,6 +28,8 @@ public final class ConfigValue {
         enableHolograms = configuration.getBoolean("features.holograms.enable");
         hologramStyle = messages("features.holograms.style");
         worlds = messages("features.worlds");
+
+        chestOpen = messages("messages.chest-open");
     }
 
     public String message(String path) {

@@ -75,4 +75,16 @@ public final class BonusChestManager {
         bonusChests.remove(bonusChest);
     }
 
+    public BonusChest getChest(Location location) {
+        BonusChest bonusChest = null;
+
+        for (BonusChest chest : bonusChests) {
+            if (chest.getLocation().equals(location)) {
+                bonusChest = chest;
+            }
+        }
+
+        return bonusChest;
+    }
+
 }
