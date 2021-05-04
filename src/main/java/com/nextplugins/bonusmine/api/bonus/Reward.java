@@ -1,4 +1,4 @@
-package com.nextplugins.nextbonusmine.api.bonus;
+package com.nextplugins.bonusmine.api.bonus;
 
 import lombok.Builder;
 import lombok.Data;
@@ -14,7 +14,7 @@ import java.util.List;
 @Builder
 public class Reward {
 
-    private final int chance;
-    private final List<String> command;
+    private final double chance;
+    private final List<String> commands;
 
 }

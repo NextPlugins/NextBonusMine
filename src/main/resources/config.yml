@@ -6,17 +6,27 @@
 #     |_| \_|\___/_/\_\\__| |_|    |_|\__,_|\__, |_|_| |_|___/         #
 #                                           __/ |                      #
 #                                          |___/                       #
+#                                                                      #
 #                          Servidor de Suporte                         #
-#                         discord.gg/JtTN7E6A2q                        #
+#                       https://nextplugins.com.br                     #
+
+
 
 features:
   # Tempo para o bonus expirar
   expireTime: 60
   # Ativar/Desativar hologramas
-  holograms: true
-  # Mundo em que irá funcionar o sistema
-  world: 'minerar'
-
+  holograms:
+    enable: true
+    style:
+      - '&e&lTESOURO &7[Level @level]'
+      - ''
+      - '&b[Clique para abrir]'
+  # Mundos em que irão funcionar o sistema
+  worlds:
+    - 'world'
+    - 'mina'
+    - 'vip'
 
 bonus:
   level-one:
@@ -24,8 +34,10 @@ bonus:
     level: 1
     # Chance de encontrar minerando
     chance: 15
-    # Bloco que podrá encontrar este bonus
-    material: DIAMOND_ORE
+    # Blocos em que poderão encontrar este bônus
+    materials:
+      - 'DIAMOND_BLOCK'
+      - 'DIAMOND_ORE'
     # Recompensas
     rewards:
       '1':
@@ -33,9 +45,31 @@ bonus:
         chance: 50
         # Comandos a serem executados
         command:
-          - 'give %player% diamond_pickaxe'
-          - 'give %player% diamond'
+          - 'give @player diamond_pickaxe'
+          - 'give @player diamond'
       '2':
         chance: 50
         command:
-          - 'give %player% obsidian'
+          - 'give @player obsidian'
+  level-two:
+    # Level da recompensa (apenas visual)
+    level: 2
+    # Chance de encontrar minerando
+    chance: 7.5
+    # Blocos em que poderão encontrar este bônus
+    materials:
+      - 'GOLD_BLOCK'
+      - 'GOLD_ORE'
+    # Recompensas
+    rewards:
+      '1':
+        # Chance de quando abrir ser essa recompensa
+        chance: 50
+        # Comandos a serem executados
+        commands:
+          - 'give @player gold'
+          - 'give @player diamond'
+      '2':
+        chance: 50
+        commands:
+          - 'give @player obsidian'

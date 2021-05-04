@@ -3,50 +3,52 @@ plugins {
 
     id 'com.github.johnrengelman.shadow' version '5.0.0'
     id 'net.minecrell.plugin-yml.bukkit' version '0.3.0'
-
 }
 
 group 'com.nextplugins'
 version '1.0.0'
 
-tasks.build.dependsOn('pdm', 'shadowJar')
+tasks.build.dependsOn('shadowJar')
 
 repositories {
     mavenCentral()
-    jcenter()
+
+    // spigot
 
     maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
     maven { url = 'https://oss.sonatype.org/content/groups/public/' }
 
-    maven { url = 'https://repo.codemc.org/repository/maven-public' }
+    // libs
 
+    maven { url = 'https://repo.codemc.org/repository/maven-public/' }
+    maven { url = 'https://jitpack.io/' }
 }
 
 dependencies {
-
     compileOnly 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
     compileOnly 'com.gmail.filoghost.holographicdisplays:holographicdisplays-api:2.4.0'
 
+    implementation 'com.github.eikefab:YamlAdapter:1.0.0'
     implementation 'org.bstats:bstats-bukkit:1.8'
 
     def lombok = "org.projectlombok:lombok:1.18.16"
     compileOnly lombok
     annotationProcessor lombok
-
 }
 
 bukkit {
-    main = 'com.nextplugins.nextbonusmine.NextBonusMine'
-    authors = ['Henry_Fabio', 'Eike', 'Gabriel Santos', 'Yuhtin']
-    website = 'https://github.com/NextPlugins'
+    main = 'com.nextplugins.bonusmine.NextBonusMine'
+    authors = ['NextPlugins']
+    website = 'https://nextplugins.com.br'
     version = "${project.version}"
     load = 'POSTWORLD'
     softDepend = ['HolographicDisplays']
 }
 
 shadowJar {
-    archiveName("${project.name}-${project.version}.jar")
-    relocate 'org.bstats', 'com.nextplugins.onlinetime.libs.bstats'
+    archiveName("${project.name}.jar")
+    relocate 'com.github.eikefab.libs', 'com.nextplugins.bonusmine.libs.yamladapter'
+    relocate 'org.bstats', 'com.nextplugins.bonusmine.libs.bstats'
 }
 
 compileJava {
