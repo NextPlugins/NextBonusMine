@@ -1,4 +1,4 @@
-package com.nextplugins.bonusmine.api.bonus;
+package br.com.nextplugins.bonusmine.api.bonus;
 
 import com.gmail.filoghost.holographicdisplays.api.Hologram;
 import lombok.Builder;

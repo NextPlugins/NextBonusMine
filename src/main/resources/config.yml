@@ -8,7 +8,7 @@
 #                                          |___/                       #
 #                                                                      #
 #                          Servidor de Suporte                         #
-#                       https://nextplugins.com.br                     #
+#                   https://nextplugins.com.br/discord                 #
 
 
 
@@ -22,7 +22,7 @@ features:
       - '&e&lTESOURO &7[Level @level]'
       - ''
       - '&b[Clique para abrir]'
-  # Mundos em que irão funcionar o sistema
+  # Mundos em que o sistema irá funcionar
   worlds:
     - 'world'
     - 'mina'
@@ -75,7 +75,7 @@ bonus:
         chance: 50
         # Comandos a serem executados
         commands:
-          - 'give @player gold'
+          - 'give @player gold_ingot'
           - 'give @player diamond'
       '2':
         chance: 50

@@ -1,14 +1,15 @@
-package com.nextplugins.bonusmine.configuration.adapter;
+package br.com.nextplugins.bonusmine.configuration.adapter;
 
+import br.com.nextplugins.bonusmine.api.bonus.BonusMine;
+import br.com.nextplugins.bonusmine.api.bonus.Reward;
+import br.com.nextplugins.bonusmine.collection.RandomCollection;
 import com.github.eikefab.libs.yamladapter.YamlAdapter;
 import com.google.common.collect.Lists;
-import com.nextplugins.bonusmine.api.bonus.BonusMine;
-import com.nextplugins.bonusmine.api.bonus.Reward;
-import com.nextplugins.bonusmine.collection.RandomCollection;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 
 import java.util.List;
+import java.util.Objects;
 
 public final class BonusMineAdapter implements YamlAdapter<BonusMine> {
 
@@ -19,7 +20,7 @@ public final class BonusMineAdapter implements YamlAdapter<BonusMine> {
                 .blocks(materials(section))
                 .chance(section.getDouble("chance"))
                 .level(section.getInt("level"))
-                .rewards(rewards(section.getConfigurationSection("rewards")))
+                .rewards(rewards(Objects.requireNonNull(section.getConfigurationSection("rewards"))))
                 .build();
     }
 

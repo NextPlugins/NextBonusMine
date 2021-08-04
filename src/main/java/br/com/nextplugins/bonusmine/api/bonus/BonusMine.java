@@ -1,6 +1,6 @@
-package com.nextplugins.bonusmine.api.bonus;
+package br.com.nextplugins.bonusmine.api.bonus;
 
-import com.nextplugins.bonusmine.collection.RandomCollection;
+import br.com.nextplugins.bonusmine.collection.RandomCollection;
 import lombok.Builder;
 import lombok.Data;
 import org.bukkit.Material;

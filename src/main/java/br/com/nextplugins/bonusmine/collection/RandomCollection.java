@@ -1,4 +1,4 @@
-package com.nextplugins.bonusmine.collection;
+package br.com.nextplugins.bonusmine.collection;
 
 import java.util.NavigableMap;
 import java.util.Random;

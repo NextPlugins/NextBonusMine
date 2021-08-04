@@ -1,4 +1,4 @@
-package com.nextplugins.bonusmine.configuration;
+package br.com.nextplugins.bonusmine.configuration;
 
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;

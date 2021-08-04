@@ -1,13 +1,13 @@
-package com.nextplugins.bonusmine;
+package br.com.nextplugins.bonusmine;
 
+import br.com.nextplugins.bonusmine.api.bonus.BonusMine;
+import br.com.nextplugins.bonusmine.configuration.ConfigValue;
+import br.com.nextplugins.bonusmine.configuration.adapter.BonusMineAdapter;
+import br.com.nextplugins.bonusmine.listener.BlockBreakListener;
+import br.com.nextplugins.bonusmine.listener.PlayerInteractListener;
+import br.com.nextplugins.bonusmine.manager.BonusChestManager;
+import br.com.nextplugins.bonusmine.manager.BonusMineManager;
 import com.github.eikefab.libs.yamladapter.ConfigAdapter;
-import com.nextplugins.bonusmine.api.bonus.BonusMine;
-import com.nextplugins.bonusmine.configuration.ConfigValue;
-import com.nextplugins.bonusmine.configuration.adapter.BonusMineAdapter;
-import com.nextplugins.bonusmine.listener.BlockBreakListener;
-import com.nextplugins.bonusmine.listener.PlayerInteractListener;
-import com.nextplugins.bonusmine.manager.BonusChestManager;
-import com.nextplugins.bonusmine.manager.BonusMineManager;
 import lombok.Getter;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.PluginManager;

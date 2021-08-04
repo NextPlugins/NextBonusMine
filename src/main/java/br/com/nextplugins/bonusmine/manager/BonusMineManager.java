@@ -1,8 +1,8 @@
-package com.nextplugins.bonusmine.manager;
+package br.com.nextplugins.bonusmine.manager;
 
 import com.google.common.collect.Lists;
-import com.nextplugins.bonusmine.NextBonusMine;
-import com.nextplugins.bonusmine.api.bonus.BonusMine;
+import br.com.nextplugins.bonusmine.NextBonusMine;
+import br.com.nextplugins.bonusmine.api.bonus.BonusMine;
 import lombok.Data;
 
 import java.util.List;

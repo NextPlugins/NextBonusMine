@@ -29,15 +29,15 @@ dependencies {
     compileOnly 'com.gmail.filoghost.holographicdisplays:holographicdisplays-api:2.4.0'
 
     implementation 'com.github.eikefab:YamlAdapter:1.0.0'
-    implementation 'org.bstats:bstats-bukkit:1.8'
+    implementation 'org.bstats:bstats-bukkit:2.2.1'
 
-    def lombok = "org.projectlombok:lombok:1.18.16"
+    def lombok = 'org.projectlombok:lombok:1.18.20'
     compileOnly lombok
     annotationProcessor lombok
 }
 
 bukkit {
-    main = 'com.nextplugins.bonusmine.NextBonusMine'
+    main = 'br.com.nextplugins.bonusmine.NextBonusMine'
     authors = ['NextPlugins']
     website = 'https://nextplugins.com.br'
     version = "${project.version}"
@@ -47,8 +47,8 @@ bukkit {
 
 shadowJar {
     archiveName("${project.name}.jar")
-    relocate 'com.github.eikefab.libs', 'com.nextplugins.bonusmine.libs.yamladapter'
-    relocate 'org.bstats', 'com.nextplugins.bonusmine.libs.bstats'
+    relocate 'com.github.eikefab.libs', 'br.com.nextplugins.bonusmine.libs.yamladapter'
+    relocate 'org.bstats', 'br.com.nextplugins.bonusmine.libs.bstats'
 }
 
 compileJava {
